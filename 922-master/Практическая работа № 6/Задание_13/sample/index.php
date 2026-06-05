@@ -9,6 +9,7 @@
 	<h2>Анонимные функции</h2>
 	
 	<?php
+<<<<<<< HEAD
 require "albums.php";
 
 // Используем array_map для обработки каждого элемента массива
@@ -45,6 +46,33 @@ foreach ($cleanAlbums as $key => $item) {
     );
 }
 ?>
+=======
+		require "albums.php";
+
+		// перебираем массив
+		foreach ($albums as $key => $item) {
+			// выводим данные массива
+			printf("
+				Номер - %s<br />
+				ID альбома: %d<br />
+				Название: %s<br />
+				Дата выпуска: %s<br />
+				Лейбл: %s<br />
+				Формат: %s<br />
+				Статус: %s<p>
+				<hr />
+			",
+				($key < 9) ? "000" . ++$key : "00". ++$key, // отформатируем вывод номера 
+				$item['id'],
+				$item['album_name'],
+				$item['date'],
+				$item['label'],
+				$item['format'],
+				$item['status']			
+			);	
+		};
+	?>
+>>>>>>> 33524df2dcfeaf9014d6e3b36a58766b1d388827
 	
 
 </body>

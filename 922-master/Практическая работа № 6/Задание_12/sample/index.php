@@ -8,6 +8,7 @@
 	<h1>Функции</h1>
 	<h2>Анонимные функции</h2>
 	
+<<<<<<< HEAD
 <?php
 require "albums.php";
 
@@ -28,6 +29,29 @@ echo "<pre>";
 var_dump($filteredAlbums);
 echo "</pre>";
 ?>
+=======
+	<?php		
+		// включаем массив
+		require "albums.php";
+		
+		// определяем callback-функцию
+		$callback = function ($item) {
+			// если в строке ключе статуса есть вхождение строки Серебряный
+			// отбираем этот массив
+			if (strpos($item["status"], "Серебряный") != ""){
+				return $item;
+			}
+		};
+
+		// вызываем array_map
+		$res = array_map($callback, $albums);
+		
+		// выводим результат
+		echo "<pre>";
+		var_dump($res);
+		echo "</pre>";
+	?>
+>>>>>>> 33524df2dcfeaf9014d6e3b36a58766b1d388827
 	
 
 </body>

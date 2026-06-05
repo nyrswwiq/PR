@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 function fnGetTeamName($pteam, $id) {
     foreach ($pteam as $row) {
         if ($row['id_team'] == $id) {
@@ -33,4 +34,13 @@ function fnOutAlbum($palbum, $pteam) {
     </table>";
     return $out;
 }
+=======
+		function fnOutAlbum($palbum, $pteam) {
+			// ... 
+		}		
+		
+		function fnGetTeamName ($pteam, $id){
+			// ...
+		}
+>>>>>>> 33524df2dcfeaf9014d6e3b36a58766b1d388827
 ?>
