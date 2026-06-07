@@ -1,36 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Таблица истинности</title>
 </head>
 <body>
-    
-    <?php
-    
-        echo "Введите значение a (0 или 1): ";
-        $a = (int) trim(fgets(STDIN));
 
-        echo "Введите значение b (0 или 1): ";
-        $b = (int) trim(fgets(STDIN));
+<form method="POST">
+    a: <input type="number" name="a" min="0" max="1" required><br>
+    b: <input type="number" name="b" min="0" max="1" required><br>
+    c: <input type="number" name="c" min="0" max="1" required><br>
+    <button type="submit">Рассчитать</button>
+</form>
 
-        echo "Введите значение c (0 или 1): ";
-        $c = (int) trim(fgets(STDIN));
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $a = (int)$_POST['a'];
+    $b = (int)$_POST['b'];
+    $c = (int)$_POST['c'];
 
-        if ($a == 0 && $b == 0 && $c == 1) {
-            $q = 1;
-        } elseif ($a == 0 && $b == 1 && $c == 0) {
-            $q = 1;
-        } elseif ($a == 1 && $b == 0 && $c == 0) {
-            $q = 1;
-        } elseif ($a == 1 && $b == 1 && $c == 1) {
-            $q = 1;
-        } else {
-            $q = 0;
-        }
+    if ($a == 0 && $b == 0 && $c == 1) {
+        $q = 1;
+    } elseif ($a == 0 && $b == 1 && $c == 0) {
+        $q = 1;
+    } elseif ($a == 1 && $b == 0 && $c == 0) {
+        $q = 1;
+    } elseif ($a == 1 && $b == 1 && $c == 1) {
+        $q = 1;
+    } else {
+        $q = 0;
+    }
 
-        echo "Результат: q = $q\n";
-        echo "Количество проверяемых условий (if + elseif): 4\n";
+    echo "<br>Результат: q = $q<br>";
+    echo "Количество проверенных условий (if + elseif): 4";
+}
+?>
 
-    ?>
+</body>
+</html>
